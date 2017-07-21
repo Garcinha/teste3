@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Quotes APP</title>
+  </head>
+  <body>
+    <h1>Quotes App</h1>
+    <p>May Node and Express be with you.</p>
+
+    <form>
+      <ul class="quote">
+      <% for(var i=0; i<quotes.length; i++) {%>
+        <li class="quotes">
+          <span class="deleteLink"><a href="/delete/<%= quotes[i]._id %>">X&nbsp;</a></span>	
+          <span class="blue";><%= quotes[i].name %></span>
+          <span class="lightblue";><%= quotes[i].quote %></span>
+        </li>
+      <% } %>
+      </ul>
+    </form>
+
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="quote" name="quote">
+      <button type="submit">Submit</button>
+    </form>
+    <style>
+
+      input{
+        border: 2px solid red;
+        padding: 10px 40px; 
+        background: transparent;
+        border-radius: 25px;
+        color: red;
+        font-family: 'Baloo', cursive !important;
+        width: 140px;
+      }
+
+      button {
+        border: 2px solid red;
+        padding: 4px 10px; 
+        background: transparent;
+        border-radius: 25px;
+        color: red;
+        font-family: 'Baloo', cursive !important;
+        font-size: 20px;
+      }
+
+      form {
+        font-family: 'Baloo', cursive;
+      }
+
+      body {
+        font-family: 'Baloo', cursive;
+        background-image: url("http://cdn.wallpapersafari.com/86/93/QxeqXu.jpg");
+        /*background: radial-gradient(navy, black, black);*/
+      }
+
+      h1 {
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        margin: 0px;
+      }
+
+      /*h1:hover {
+      opacity: 0.2;
+      }*/
+
+      p {
+        color: red;
+        text-align: center;
+      }
+
+      .quotes {
+        font-size: 20px;
+      }
+
+      .blue {
+        color:red;
+      }
+
+      .lightblue {
+        color:darkred;
+      }
+
+      .deleteLink a{
+       text-decoration: none;
+       color: #d50000;
+      }
+    </style>
+  </body>
+</html>
